@@ -1,0 +1,581 @@
+// Variables
+$font-family: 'Calibri', sans-serif;
+$primary-color: #984807;
+$secondary-color: #c06912;
+$highlight-color: #004f8a;
+$dark-text-color: #333;
+$gray-text-color: gray;
+$header-height: 85px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive-column($breakpoint: 768px) {
+  @media (max-width: $breakpoint) {
+    flex-direction: column;
+  }
+}
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+body {
+  line-height: 1.5;
+}
+
+// Header
+header {
+  @include flex-center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 100px;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  height: $header-height;
+
+  .logo {
+    p {
+      color: $secondary-color;
+    }
+  }
+
+  nav {
+    margin-inline: 30px;
+
+    ul {
+      @include flex-center;
+      list-style: none;
+      gap: 15px;
+    }
+  }
+
+  .nav-link {
+    font-weight: normal;
+    color: black;
+    text-decoration: none;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+// Home section
+#home {
+  @include flex-center;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: $header-height;
+  padding-top: 20px;
+
+  .intro {
+    text-align: center;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    .intro_link {
+      @include flex-center;
+      background-color: $primary-color;
+      margin-top: 10px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  // Badge
+  .badge {
+    text-align: center;
+  
+    h1 {
+      font-size: 44pt;
+      color: #604a7b;
+    }
+  
+    .badge_services {
+      list-style: none;
+      text-align: left;
+      padding-left: 20px;
+      font-weight: bold;
+      color: $highlight-color;
+  
+      li {
+        position: relative;
+        padding-inline: 30px;
+        font-size: 18.1pt;
+  
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 15px;
+          height: 15px;
+          border: 2px solid $highlight-color;
+          box-shadow: 2px 2px 2px rgba(0, 79, 138, 0.75);
+        }
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    background: grey;
+    height: 30px;
+    width: 250px;
+    margin: 10px;
+    padding-inline: 10px;
+    text-align: left;
+
+    a {
+        color: whitesmoke;
+        text-decoration: none;
+        margin-left: 0;
+        text-align: left;
+        font-size: 12pt;
+    }
+  }
+
+  .patron {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    justify-content: space-around;
+
+    #patron_images_1 {
+        img {
+          margin: 10px;
+        }
+    }
+
+    #patron_images_2 {
+        img{
+            margin-inline: 50px;
+        }
+    }
+  }
+}
+
+// About section
+#about {
+  display: flex;
+  flex-direction: column;
+
+  .about {
+    @include flex-center;
+    justify-content: space-around;
+
+    .about_l, .about_r {
+      flex: 1;
+      padding-inline: 10px;
+    }
+
+    @include responsive-column;
+
+    .about_l {
+        h1 {
+            color: #686868;
+            font-size: 88pt;
+            padding-block: 0px;
+            height : 100pt;
+        }
+    
+        .about_skills {
+            color: #004f8a;
+           
+            h2 {
+              font-size: 18pt;
+            }
+    
+            ul {
+              list-style: none;
+              padding-left: 20px;
+              font-weight: bold;
+              color: #004f8a;
+        
+              li {
+                position: relative;
+                padding-inline: 30px;
+                margin: 10px;
+                font-size: 12.2pt;
+                line-height: normal;
+        
+                &::before {
+                  content: '';
+                  position: absolute;
+                  top: 50%;
+                  left: 0;
+                  transform: translateY(-50%);
+                  width: 15px;
+                  height: 15px;
+                  border: 2px solid #004f8a;
+                  box-shadow: 2px 2px 2px #004f8a;
+                }
+              }
+            }
+          }
+    }
+
+    .about_r {
+        /* about_info */
+        .about_info {
+            width: 400px;
+
+            h2 {
+              font-size: 18pt;
+            }
+
+            h3 {
+              font-size: 14pt;
+              margin-block: 5px;
+            }
+
+            p {
+              font-size: 14pt;
+              margin-block: 5px;
+            }
+        }
+    
+        .about_strengths {
+            /*margin-top: 50px;*/
+            color: #17375e;
+            width: 400px;
+
+            li {
+                list-style-type: square;
+                /*margin: 10px;*/
+            }
+        }
+    }
+      
+  }
+
+  .about_footer {
+    /* about_footer */
+    display: flex;
+    padding-inline: 50px;
+    margin-top: 20px;
+
+    .about_quote {
+        /*flex: 1;*/
+        width: 50%;
+        color: #262626;
+
+        .quote_name {
+          flex: 1;
+            text-align: right;
+        }
+    }
+
+    .about-contact {
+      margin-left: 350px;
+      height: 30px;
+      width: 150px;
+    }
+  }
+}
+
+#services {
+  @include flex-center;
+
+  .services-l {
+    width: 60%;
+    padding-inline: 20px;
+
+    h1 {
+      color: #8064a2;
+      font-size: 72pt;
+    }
+
+    h2 {
+      color: #4d4d4d;
+      font-size: 24pt;
+    }
+
+    h3 {
+      color: #4d4d4d;
+      font-size: 20pt;
+    }
+
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 16px;
+      text-align: left;
+
+      thead {
+          tr {
+          background-color: #6c757d; /* Dark gray */
+          color: #ffffff;
+          text-align: left;
+
+          th {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          border: 1px solid #dddddd;
+
+          td {
+            padding-inline: 20px;
+            padding-block: 10px;
+          }
+
+          .td-data {
+          color: #215968;
+          font-weight: bold;
+          }
+        }
+
+        tr:nth-child(odd) {
+          background-color: #dedede; /* Light gray */
+        }
+
+        tr:nth-child(even) {
+          background-color: #f5f5f5; /* Light gray */
+        }
+      }
+    }
+  }
+
+  .services-r {
+    width: 40%;
+    padding-inline: 20px;
+
+    .offer {
+      color: #0d0d0d;
+      padding-inline: 20px;
+    }
+
+    .other-services {
+      margin-block: 20px;
+      color: #503d67;
+    }
+
+    .diamond {
+      @include flex-center;
+      flex-direction: column;
+      p {
+        color: #c00000;
+        font-weight: bold;        
+      }
+    }
+  }
+}
+
+#portfolio {
+  h1 {
+    color: #686868;
+    font-size: 88pt;
+  }
+
+  h2 {
+    color: #0d0d0d;
+    font-weight: bold;
+  }
+
+  .portfolio-container {
+    @include flex-center;
+
+    .portfolio-l {
+      flex: 1;
+      p {
+        color: #5e5e5e;
+        width: 45%;
+      }
+
+      .webpages-container {
+        .webpages {
+          padding-inline: 60px;
+          
+          a {
+            text-decoration: none;
+            color: #632523;
+          }
+        }
+      }
+    }
+
+    .portfolio-r {
+      flex: 1;
+      padding-inline: 20px;
+
+      .logo-container {
+        @include flex-center;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+#testimonial {
+    .testimonial_header {
+        display: flex;
+        align-items: center;
+
+        h1 {
+            font-size: 75px;
+            margin-bottom: 20px;
+            color: #686868;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            margin-inline: 30px;
+        }
+    }
+
+    .testimonial-container {
+        display: flex;
+        justify-content: space-around;
+
+      .icon-parent {
+        .circle {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          margin-left: 20%;
+          margin-bottom: -20px;
+          background-color: #dbeef4;
+        }
+
+        .icon {
+            position: relative;
+            background-color: #dbeef4;
+            width: 300px; /* Adjust width */
+            height: auto;
+            padding: 30px;
+            text-align: center;
+            clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
+            font-weight: bold;
+        }
+      }
+    }
+}
+
+#contact {
+  @include flex-center;
+
+  .contact-left {
+    flex: 1;
+
+    h1 {
+      color: #686868;
+      font-size: 75pt;
+      height: 85pt;
+    }
+
+    img {
+      width: 500px;
+      height: 330px;
+    }
+
+    .talk {
+      display: flex;
+      width: 500px;
+      padding-left: 40px;
+      margin-top: 10px;
+
+      h3 {
+        width: 150px;
+      }
+    }
+
+    .contact-info {
+      .info-item {
+        display: flex;
+        /*margin: 20px;*/
+        align-items: center;
+
+        img {
+          width: 45px;
+          height: 35px;
+          margin-inline: 20px;
+        }
+      }
+    }
+  }
+
+  .contact-right{
+    flex: 1;    
+
+    .form-fields {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input, textarea {
+        padding: 10px;
+        border: 2px solid;
+        border-color: #add8e6;
+      }
+
+      button {
+        padding: 10px;
+        border: 1px solid #c06912;
+        background-color: #c06912;
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+/* This is the button at the bottom of every section */
+.contact-me {
+  background-color: #c06912;
+  width: 100px;
+  margin: 20px;
+
+  a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+  }
+}
+
+/* styles common to all sections */
+.section {
+  scroll-margin-top: $header-height;
+  padding-inline: 100px;
+}
+
+// Media queries
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  #about .about {
+    flex-direction: column;
+  }
+}
