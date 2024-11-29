@@ -401,26 +401,33 @@ header {
   .portfolio-container {
     @include flex-center;
 
-    .portfolio-l {
+    .portfolio-t {
       flex: 1;
       p {
         color: #5e5e5e;
         width: 45%;
       }
 
-      .webpages-container {
-        .webpages {
-          padding-inline: 60px;
-          
-          a {
-            text-decoration: none;
-            color: #632523;
+      .portfolio-t-r {
+        display: flex;
+
+        .webpages-container {
+          .webpages {
+            padding-inline: 60px;
+            
+            a {
+              text-decoration: none;
+              color: #632523;
+            }
           }
         }
+
+        .landing-pages {}
       }
+      
     }
 
-    .portfolio-r {
+    .portfolio-b {
       flex: 1;
       padding-inline: 20px;
 
