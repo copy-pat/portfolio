@@ -404,6 +404,7 @@ header {
 
     .portfolio-t {
       display: flex;
+      margin-bottom: 20px;
     
 
       p {
@@ -412,6 +413,7 @@ header {
         font-size: 1.2rem;
         position: relative;
         padding-inline: 30px;
+        background-color: lightgray;
 
         &::before {
           content: '';

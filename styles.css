@@ -327,6 +327,7 @@ header .nav-link.active {
 }
 #portfolio .portfolio-container .portfolio-t {
   display: flex;
+  margin-bottom: 20px;
 }
 #portfolio .portfolio-container .portfolio-t p {
   color: #5e5e5e;
@@ -334,6 +335,7 @@ header .nav-link.active {
   font-size: 1.2rem;
   position: relative;
   padding-inline: 30px;
+  background-color: lightgray;
 }
 #portfolio .portfolio-container .portfolio-t p::before {
   content: "";
