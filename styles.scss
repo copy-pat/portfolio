@@ -37,12 +37,14 @@ header {
   @include flex-center;
   justify-content: space-between;
   width: 100%;
-  padding: 0px 150px;
+  padding-inline: 150px;
+  padding-top: 20px;
   position: fixed;
   top: 0;
   background-color: white;
+  //background-color: pink;
   z-index: 1000;
-  height: $header-height;
+  //height: $header-height;
 
   .logo {
     p {
@@ -77,7 +79,7 @@ header {
   justify-content: space-around;
   align-items: flex-start;
   margin-top: $header-height;
-  padding-top: 20px;
+  padding-top: 30px;
 
   .intro {
     h1 {
@@ -178,6 +180,7 @@ header {
   display: flex;
   flex-direction: column;
   padding-left: 150px;
+  padding-top: 30px;
 
   .about {
     @include flex-center;
@@ -254,7 +257,7 @@ header {
         }
     
         .about_strengths {
-            /*margin-top: 50px;*/
+            margin-top: 50px;
             width: 400px;
 
             li {
@@ -275,7 +278,7 @@ header {
 
     .about_quote {
         /*flex: 1;*/
-        width: 50%;
+        width: 40%;
         color: #262626;
 
         h3 {
@@ -302,6 +305,7 @@ header {
 #services {
   @include flex-center;
   padding-left: 150px;
+  padding-top: 30px;
 
   .services-l {
     width: 60%;
@@ -315,7 +319,7 @@ header {
     h2 {
       color: #4d4d4d;
       font-size: 23pt;
-      margin-bottom: -15px;
+      margin-bottom: -5px;
     }
 
     h3 {
@@ -410,6 +414,7 @@ header {
 }
 
 #portfolio {
+  padding-top: 30px;
   padding-left: 160px;
   h1 {
     color: #686868;
@@ -582,6 +587,7 @@ header {
 }
 
 #testimonial {
+  padding-top: 40px;
     .testimonial_header {
         display: flex;
         align-items: center;
@@ -593,10 +599,10 @@ header {
         }
 
         img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             margin-bottom: 20px;
-            margin-inline: 30px;
+            margin-inline: 50px;
         }
     }
 
@@ -629,21 +635,36 @@ header {
 }
 
 #contact {
-  @include flex-center;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 
   .contact-left {
-    flex: 1;
-
     h1 {
       color: #686868;
       font-size: 75pt;
       height: 85pt;
+      margin-bottom: 40px;
     }
 
-    img {
-      width: 500px;
-      height: 330px;
-    }
+    .image-container {
+      position: relative;
+
+      img {
+        width: 500px;
+        height: 330px;
+        display: block;
+      }
+
+      .overlay-text {
+        position: absolute;
+        top: 87%;
+        left: 7%;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+    }    
 
     .talk {
       display: flex;
@@ -657,14 +678,15 @@ header {
     }
 
     .contact-info {
+      margin-block: 20px;
       .info-item {
         display: flex;
         /*margin: 20px;*/
         align-items: center;
 
         img {
-          width: 45px;
-          height: 35px;
+          width: 40px;
+          height: 30px;
           margin-inline: 20px;
         }
       }
@@ -672,7 +694,10 @@ header {
   }
 
   .contact-right{
-    flex: 1;    
+    width: 35%;
+    margin-top: 55px;
+    padding-top: 5%;
+      
 
     .form-fields {
       margin-top: 20px;

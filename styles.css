@@ -15,12 +15,12 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0px 150px;
+  padding-inline: 150px;
+  padding-top: 20px;
   position: fixed;
   top: 0;
   background-color: white;
   z-index: 1000;
-  height: 105px;
 }
 header .logo p {
   color: #c06912;
@@ -51,7 +51,7 @@ header .nav-link.active {
   justify-content: space-around;
   align-items: flex-start;
   margin-top: 105px;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 #home .intro h1 {
   font-size: 2em;
@@ -131,6 +131,7 @@ header .nav-link.active {
   display: flex;
   flex-direction: column;
   padding-left: 150px;
+  padding-top: 30px;
 }
 #about .about {
   display: flex;
@@ -200,7 +201,7 @@ header .nav-link.active {
   font-weight: bold;
 }
 #about .about .about_r .about_strengths {
-  /*margin-top: 50px;*/
+  margin-top: 50px;
   width: 400px;
 }
 #about .about .about_r .about_strengths li {
@@ -216,7 +217,7 @@ header .nav-link.active {
 }
 #about .about_footer .about_quote {
   /*flex: 1;*/
-  width: 50%;
+  width: 40%;
   color: #262626;
 }
 #about .about_footer .about_quote h3 {
@@ -239,6 +240,7 @@ header .nav-link.active {
   justify-content: center;
   align-items: center;
   padding-left: 150px;
+  padding-top: 30px;
 }
 #services .services-l {
   width: 60%;
@@ -251,7 +253,7 @@ header .nav-link.active {
 #services .services-l h2 {
   color: #4d4d4d;
   font-size: 23pt;
-  margin-bottom: -15px;
+  margin-bottom: -5px;
 }
 #services .services-l h3 {
   color: #4d4d4d;
@@ -327,6 +329,7 @@ header .nav-link.active {
 }
 
 #portfolio {
+  padding-top: 30px;
   padding-left: 160px;
 }
 #portfolio h1 {
@@ -474,6 +477,9 @@ header .nav-link.active {
   margin-block: 10px;
 }
 
+#testimonial {
+  padding-top: 40px;
+}
 #testimonial .testimonial_header {
   display: flex;
   align-items: center;
@@ -484,10 +490,10 @@ header .nav-link.active {
   color: #686868;
 }
 #testimonial .testimonial_header img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin-bottom: 20px;
-  margin-inline: 30px;
+  margin-inline: 50px;
 }
 #testimonial .testimonial-container {
   display: flex;
@@ -514,21 +520,31 @@ header .nav-link.active {
 }
 
 #contact {
+  padding-top: 30px;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-#contact .contact-left {
-  flex: 1;
+  justify-content: space-evenly;
 }
 #contact .contact-left h1 {
   color: #686868;
   font-size: 75pt;
   height: 85pt;
+  margin-bottom: 40px;
 }
-#contact .contact-left img {
+#contact .contact-left .image-container {
+  position: relative;
+}
+#contact .contact-left .image-container img {
   width: 500px;
   height: 330px;
+  display: block;
+}
+#contact .contact-left .image-container .overlay-text {
+  position: absolute;
+  top: 87%;
+  left: 7%;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 #contact .contact-left .talk {
   display: flex;
@@ -539,18 +555,23 @@ header .nav-link.active {
 #contact .contact-left .talk h3 {
   width: 150px;
 }
+#contact .contact-left .contact-info {
+  margin-block: 20px;
+}
 #contact .contact-left .contact-info .info-item {
   display: flex;
   /*margin: 20px;*/
   align-items: center;
 }
 #contact .contact-left .contact-info .info-item img {
-  width: 45px;
-  height: 35px;
+  width: 40px;
+  height: 30px;
   margin-inline: 20px;
 }
 #contact .contact-right {
-  flex: 1;
+  width: 35%;
+  margin-top: 55px;
+  padding-top: 5%;
 }
 #contact .contact-right .form-fields {
   margin-top: 20px;
