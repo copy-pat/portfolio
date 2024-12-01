@@ -131,7 +131,7 @@ header .nav-link.active {
   display: flex;
   flex-direction: column;
   padding-left: 150px;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 #about .about {
   display: flex;
@@ -404,6 +404,21 @@ header .nav-link.active {
   display: flex;
   flex-direction: column;
 }
+#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container .logo-button {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: red;
+}
+#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container .image-overlay {
+  display: none;
+}
+#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container .show-image {
+  display: block;
+  max-width: 50%;
+  max-height: 50%;
+  border: 2px solid white;
+  border-radius: 10px;
+}
 #portfolio .portfolio-container .portfolio-b {
   display: flex;
   gap: 50px;
@@ -478,7 +493,7 @@ header .nav-link.active {
 }
 
 #testimonial {
-  padding-top: 40px;
+  padding-top: 50px;
 }
 #testimonial .testimonial_header {
   display: flex;

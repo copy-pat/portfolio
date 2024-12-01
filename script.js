@@ -23,3 +23,31 @@ function updateActiveLink() {
 
 // Listen for scroll events to update active link
 window.addEventListener('scroll', updateActiveLink);
+
+
+// Toggle the visibility of the clicked image
+function toggleHiddenImages(e) {
+    // Get the image related to the clicked element
+    const _image = e.target.parentElement.nextElementSibling;
+
+    // If there's an active 'show-image', hide it
+    const activeImage = document.querySelector('.show-image');
+    if (activeImage && activeImage !== _image) {
+        activeImage.classList.remove('show-image');
+    }
+
+    // Check if the click target is not an image or if the target is the image to toggle
+    if (e.target.tagName !== 'IMG') {
+        console.log('Clicked outside the image');
+        return;
+    }
+
+    // Toggle the visibility of the clicked image
+    if (_image) {
+        _image.classList.toggle('show-image');
+        console.log(`Image toggled: ${_image.classList}`);
+    }
+}
+
+
+window.addEventListener('click', toggleHiddenImages);
