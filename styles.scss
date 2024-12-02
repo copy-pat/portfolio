@@ -508,10 +508,16 @@ header {
 
             .show-image {
               display: block;
+              position: fixed; /* Ensures it doesn't affect other elements */
+              top: 50%;
+              left: 50%;
               max-width: 50%;
               max-height: 50%;
+              transform: translate(-50%, -50%);
               border: 2px solid white;
               border-radius: 10px;
+              background: white; /* Optional: Add a background if needed */
+              z-index: 1000; /* Ensures it appears above other elements */
             }
           }
         }
