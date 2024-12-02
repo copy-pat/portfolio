@@ -404,27 +404,6 @@ header .nav-link.active {
   display: flex;
   flex-direction: column;
 }
-#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container .logo-button {
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: red;
-}
-#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container .image-overlay {
-  display: none;
-}
-#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container .show-image {
-  display: block;
-  position: fixed; /* Ensures it doesn't affect other elements */
-  top: 50%;
-  left: 50%;
-  max-width: 50%;
-  max-height: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid white;
-  border-radius: 10px;
-  background: white; /* Optional: Add a background if needed */
-  z-index: 1000; /* Ensures it appears above other elements */
-}
 #portfolio .portfolio-container .portfolio-b {
   display: flex;
   gap: 50px;
@@ -639,4 +618,30 @@ header .nav-link.active {
   #about .about {
     flex-direction: column;
   }
+}
+.blur {
+  filter: blur(5px); /* Adjust the intensity of the blur */
+  pointer-events: none; /* Prevent interaction with blurred elements */
+}
+
+.blur::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent dark overlay */
+  z-index: 1; /* Ensure it covers the section */
+}
+
+.show-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-height: 99%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 1000; /* Ensures it appears above other elements */
 }/*# sourceMappingURL=styles.css.map */

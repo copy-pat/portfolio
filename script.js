@@ -25,29 +25,55 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink);
 
 
-// Toggle the visibility of the clicked image
-function toggleHiddenImages(e) {
-    // Get the image related to the clicked element
-    const _image = e.target.parentElement.nextElementSibling;
-
-    // If there's an active 'show-image', hide it
+function showImage(e) {
     const activeImage = document.querySelector('.show-image');
-    if (activeImage && activeImage !== _image) {
-        activeImage.classList.remove('show-image');
-    }
+    const sections = document.getElementsByTagName('SECTION');
 
-    // Check if the click target is not an image or if the target is the image to toggle
-    if (e.target.tagName !== 'IMG') {
-        console.log('Clicked outside the image');
+    // Helper function to toggle blur on sections
+    const toggleBlur = (add) => {
+        for (const section of sections) {
+            if (add) {
+                section.classList.add('blur');
+            } else {
+                section.classList.remove('blur');
+            }
+        }
+    };
+
+    // If there's already an active image, do nothing
+    if (activeImage) {
         return;
     }
 
-    // Toggle the visibility of the clicked image
-    if (_image) {
-        _image.classList.toggle('show-image');
-        console.log(`Image toggled: ${_image.classList}`);
+    // Check if the clicked element should toggle the image
+    if (e.target.classList.contains('toggle-image')) {
+        const imgSrc = `./assets/${e.target.classList[0]}.jpg`;
+
+        // Create the overlay image
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.classList.add('show-image');
+
+        // Append the image to the body
+        document.body.appendChild(img);
+
+        // Blur the sections
+        toggleBlur(true);
+
+        // Add event listener to remove the image and unblur sections when clicking outside
+        const removeImage = (e) => {
+            if (!img.contains(e.target)) {
+                img.remove(); // Remove the overlaid image
+                toggleBlur(false); // Unblur sections
+                document.body.removeEventListener('click', removeImage); // Clean up event listener
+                console.log('Overlay image removed.');
+            }
+        };
+
+        document.body.addEventListener('click', removeImage);
     }
 }
 
 
-window.addEventListener('click', toggleHiddenImages);
+
+window.addEventListener('click', showImage);
