@@ -24,9 +24,9 @@ function updateActiveLink() {
 // Listen for scroll events to update active link
 window.addEventListener('scroll', updateActiveLink);
 
-
-function showImage(e) {
-    const activeImage = document.querySelector('.show-image');
+// Listen for click events to toggle image overlay
+async function showImage(e) {
+    const activeContainer = document.querySelector('.overlay-container');
     const sections = document.getElementsByTagName('SECTION');
 
     // Helper function to toggle blur on sections
@@ -40,37 +40,71 @@ function showImage(e) {
         }
     };
 
-    // If there's already an active image, do nothing
-    if (activeImage) {
+    // If there’s already an active container, do nothing
+    if (activeContainer) {
         return;
     }
 
     // Check if the clicked element should toggle the image
     if (e.target.classList.contains('toggle-image')) {
-        const imgSrc = `./assets/${e.target.classList[0]}.jpg`;
+        const baseSrc = `./assets/${e.target.classList[0]}`;
+        const imgSrc1 = `${baseSrc}-0.jpg`;
+        const imgSrc2 = `${baseSrc}-1.jpg`;
 
-        // Create the overlay image
-        const img = document.createElement('img');
-        img.src = imgSrc;
-        img.classList.add('show-image');
+        // Create the container
+        const container = document.createElement('div');
+        container.classList.add('overlay-container');
+        console.log(container);
 
-        // Append the image to the body
-        document.body.appendChild(img);
-
-        // Blur the sections
-        toggleBlur(true);
-
-        // Add event listener to remove the image and unblur sections when clicking outside
-        const removeImage = (e) => {
-            if (!img.contains(e.target)) {
-                img.remove(); // Remove the overlaid image
-                toggleBlur(false); // Unblur sections
-                document.body.removeEventListener('click', removeImage); // Clean up event listener
-                console.log('Overlay image removed.');
+        // Check if images exist
+        async function checkImageExists(imagePath) {
+            try {
+                const response = await fetch(imagePath, { method: 'HEAD' });
+                return response.ok;
+            } catch {
+                return false;
             }
+        }
+        
+        // Create image if it exists
+        const createImage = (src) => {
+            const img = document.createElement('img');
+            img.src = src;
+            return img;
         };
 
-        document.body.addEventListener('click', removeImage);
+        const addImage = async (src) => {
+            const exists = await checkImageExists(src);
+            return exists ? createImage(src) : null;
+        };
+
+        Promise.all([addImage(imgSrc1), addImage(imgSrc2)]).then((images) => {
+            const validImages = images.filter(Boolean);
+
+            if (validImages.length === 0) {
+                return; // Do nothing if no images exist
+            }
+
+            validImages.forEach((img) => container.appendChild(img));
+            container.classList.add(validImages.length === 1 ? 'single' : 'multiple');
+            document.body.appendChild(container);
+            console.log(container)
+
+            // Blur the sections
+            toggleBlur(true);
+
+            // Add event listener to remove the images and unblur sections
+            const removeImages = (e) => {
+                if (!container.contains(e.target)) {
+                    container.remove(); // Remove the overlay container
+                    toggleBlur(false); // Unblur sections
+                    document.body.removeEventListener('click', removeImages); // Clean up event listener
+                    console.log('Overlay images removed.');
+                }
+            };
+
+            document.body.addEventListener('click', removeImages);
+        });
     }
 }
 

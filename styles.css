@@ -380,7 +380,7 @@ header .nav-link.active {
 }
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .webpages-container {
   flex: 1;
-  padding: 20px 30px;
+  padding-inline: 30px;
 }
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .webpages-container h3 {
   margin-left: 20px;
@@ -391,10 +391,10 @@ header .nav-link.active {
   background-color: #a59d84;
   margin-block: 5px;
   width: 150px;
-}
-#portfolio .portfolio-container .portfolio-t .portfolio-t-r .webpages-container .webpages a {
-  text-decoration: none;
-  color: #fffdd0;
+  cursor: default;
+  gap: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages {
   margin-top: 11px;
@@ -403,6 +403,17 @@ header .nav-link.active {
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container img {
+  height: 40px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-inline: 10px;
+}
+#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container img::hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #portfolio .portfolio-container .portfolio-b {
   display: flex;
@@ -644,4 +655,38 @@ header .nav-link.active {
   border: 1px solid black;
   border-radius: 5px;
   z-index: 1000; /* Ensures it appears above other elements */
+}
+
+/* Base style for the overlay container */
+.overlay-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between images when there are two */
+  z-index: 1000;
+}
+
+/* Style for the images */
+.overlay-container img {
+  max-width: 90vw;
+  max-height: 90vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/* Single image style */
+.overlay-container.single img {
+  width: auto;
+  height: auto;
+}
+
+/* Two images side by side */
+.overlay-container.multiple {
+  flex-direction: row;
 }/*# sourceMappingURL=styles.css.map */
