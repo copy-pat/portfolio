@@ -159,6 +159,7 @@ header {
     flex-direction: column;
     margin: 20px;
     justify-content: space-around;
+    background-color: red;
 
     #patron_images_1 {
       margin-left: 80px;
@@ -785,17 +786,6 @@ header {
   z-index: 1; /* Ensure it covers the section */
 }
 
-.show-image {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  max-height: 99%;
-  transform: translate(-50%, -50%);
-  border: 1px solid black;
-  border-radius: 5px;
-  z-index: 1000; /* Ensures it appears above other elements */
-}
-
 /* Base style for the overlay container */
 .overlay-container {
   position: fixed;
@@ -811,12 +801,13 @@ header {
 
 /* Style for the images */
 .overlay-container img {
-  max-width: 90vw;
-  max-height: 90vh;
+  //max-width: 90vw;
+  max-height: 125vh;
   object-fit: contain;
-  border: 2px solid white;
-  border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
+
 
 /* Single image style */
 .overlay-container.single img {

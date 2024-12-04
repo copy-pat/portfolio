@@ -108,6 +108,4 @@ async function showImage(e) {
     }
 }
 
-
-
 window.addEventListener('click', showImage);
