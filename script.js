@@ -109,3 +109,34 @@ async function showImage(e) {
 }
 
 window.addEventListener('click', showImage);
+
+// Redirect
+function redirect(e) {
+    if (e.target.classList.contains('redirect')) {
+        // Check if an image is already displayed
+        const activeImage = document.querySelector('.overlay-image');
+        if (activeImage) {
+            return; // Prevent multiple images
+        }
+
+        // Create and style the image
+        const img = document.createElement('img');
+        img.src = "./assets/patron-industrial-0.jpg";
+        img.classList.add('overlay-image'); // Add a class for styling
+
+        // Append the image to the body
+        document.body.appendChild(img);
+
+        // Add a click event to remove the image when clicked outside
+        const removeImage = (e) => {
+            if (!img.contains(e.target)) {
+                img.remove(); // Remove the image
+                document.body.removeEventListener('click', removeImage); // Clean up the event listener
+            }
+        };
+        document.body.addEventListener('click', removeImage);
+    }
+}
+
+
+window.addEventListener('click', redirect);
