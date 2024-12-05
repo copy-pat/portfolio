@@ -24,117 +24,11 @@ function updateActiveLink() {
 // Listen for scroll events to update active link
 window.addEventListener('scroll', updateActiveLink);
 
-// Listen for click events to toggle image overlay
-async function showImage(e) {
-    const activeContainer = document.querySelector('.overlay-container');
-    const sections = document.getElementsByTagName('SECTION');
-
-    // Helper function to toggle blur on sections
-    const toggleBlur = (add) => {
-        for (const section of sections) {
-            if (add) {
-                section.classList.add('blur');
-            } else {
-                section.classList.remove('blur');
-            }
-        }
-    };
-
-    // If there’s already an active container, do nothing
-    if (activeContainer) {
-        return;
-    }
-
-    // Check if the clicked element should toggle the image
-    if (e.target.classList.contains('toggle-image')) {
-        const baseSrc = `./assets/${e.target.classList[0]}`;
-        const imgSrc1 = `${baseSrc}-0.jpg`;
-        const imgSrc2 = `${baseSrc}-1.jpg`;
-
-        // Create the container
-        const container = document.createElement('div');
-        container.classList.add('overlay-container');
-        console.log(container);
-
-        // Check if images exist
-        async function checkImageExists(imagePath) {
-            try {
-                const response = await fetch(imagePath, { method: 'HEAD' });
-                return response.ok;
-            } catch {
-                return false;
-            }
-        }
-        
-        // Create image if it exists
-        const createImage = (src) => {
-            const img = document.createElement('img');
-            img.src = src;
-            return img;
-        };
-
-        const addImage = async (src) => {
-            const exists = await checkImageExists(src);
-            return exists ? createImage(src) : null;
-        };
-
-        Promise.all([addImage(imgSrc1), addImage(imgSrc2)]).then((images) => {
-            const validImages = images.filter(Boolean);
-
-            if (validImages.length === 0) {
-                return; // Do nothing if no images exist
-            }
-
-            validImages.forEach((img) => container.appendChild(img));
-            container.classList.add(validImages.length === 1 ? 'single' : 'multiple');
-            document.body.appendChild(container);
-            console.log(container)
-
-            // Blur the sections
-            toggleBlur(true);
-
-            // Add event listener to remove the images and unblur sections
-            const removeImages = (e) => {
-                if (!container.contains(e.target)) {
-                    container.remove(); // Remove the overlay container
-                    toggleBlur(false); // Unblur sections
-                    document.body.removeEventListener('click', removeImages); // Clean up event listener
-                    console.log('Overlay images removed.');
-                }
-            };
-
-            document.body.addEventListener('click', removeImages);
-        });
-    }
-}
-
-window.addEventListener('click', showImage);
-
 // Redirect
 function redirect(e) {
     if (e.target.classList.contains('redirect')) {
-        // Check if an image is already displayed
-        const activeImage = document.querySelector('.overlay-image');
-        if (activeImage) {
-            return; // Prevent multiple images
-        }
-
-        // Create and style the image
-        const img = document.createElement('img');
-        img.src = "./assets/patron-industrial-0.jpg";
-        img.classList.add('overlay-image'); // Add a class for styling
-
-        // Append the image to the body
-        document.body.appendChild(img);
-
-        // Add a click event to remove the image when clicked outside
-        const removeImage = (e) => {
-            if (!img.contains(e.target)) {
-                img.remove(); // Remove the image
-                document.body.removeEventListener('click', removeImage); // Clean up the event listener
-            }
-        };
-        document.body.addEventListener('click', removeImage);
+        window.location.href = `http://127.0.0.1:5500/show-image.html?imageUrl=${e.target.classList[0]}&pages=${e.target.classList[1]}`;
+        console.log('redirect')
     }
 }
 
