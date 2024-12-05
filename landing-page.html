@@ -21,20 +21,13 @@
         const imageUrl = urlParams.get('imageUrl');
         const pages = urlParams.get('pages');
 
-        const img = document.createElement('img');
-        img.src = `./assets/${imageUrl}-0.jpg`;
-        img.style.width = "100%";
-
-        console.log(pages);
-
         for (let i = 0; i < pages; i++) {
             const img = document.createElement('img');
             img.src = `./assets/${imageUrl}-${i}.jpg`;
             img.style.width = "90%";
             document.querySelector('.image').appendChild(img);
         }
-
-        
+                
     </script>
 </body>
 </html>

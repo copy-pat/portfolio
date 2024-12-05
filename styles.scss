@@ -22,10 +22,11 @@ $header-height: 105px;
 
 // Base styles
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   font-family: $font-family;
+  max-width: 1200px;
 }
 
 body {
@@ -37,14 +38,11 @@ header {
   @include flex-center;
   justify-content: space-between;
   width: 100%;
-  padding-inline: 150px;
   padding-top: 20px;
   position: fixed;
   top: 0;
   background-color: white;
-  //background-color: pink;
   z-index: 1000;
-  //height: $header-height;
 
   .logo {
     p {
@@ -53,8 +51,6 @@ header {
   }
 
   nav {
-    margin-inline: 30px;
-
     ul {
       @include flex-center;
       list-style: none;
@@ -76,12 +72,13 @@ header {
 // Home section
 #home {
   @include flex-center;
-  justify-content: space-around;
-  align-items: flex-start;
+  //justify-content: space-around;
+  align-items: flex-end;
   margin-top: $header-height;
   padding-top: 30px;
 
   .intro {
+    margin-left: 27px;
     h1 {
       font-size: 2em;
     }
@@ -102,7 +99,7 @@ header {
   }
 
   // Badge
-  .badge {  
+  .badge {
     h1 {
       font-size: 40pt;
       color: #604a7b;
@@ -159,19 +156,23 @@ header {
     flex-direction: column;
     margin: 20px;
     justify-content: space-around;
-    background-color: red;
+    gap: 10px;
 
-    #patron_images_1 {
-      margin-left: 80px;
-        img {
-          margin: 10px;
-        }
+    .patron-t, .patron-b {
+      display: flex;
+      gap: 10px;
+      //margin: 20px;
     }
 
-    #patron_images_2 {
-        img{
-            margin-inline: 50px;
-        }
+    .patron-t img{
+      height: 60px;
+      width: auto;
+    }
+
+    .patron-b img{
+      height: 70px;
+      width: auto;
+      gap: 5px;
     }
   }
 }
@@ -180,12 +181,12 @@ header {
 #about {
   display: flex;
   flex-direction: column;
-  padding-left: 150px;
   padding-top: 20px;
 
   .about {
     @include flex-center;
     justify-content: space-around;
+    gap: 20px;
 
     .about_l, .about_r {
       flex: 1;
@@ -238,6 +239,8 @@ header {
     }
 
     .about_r {
+      margin-top: 60px;
+      
         /* about_info */
         .about_info {
             width: 400px;
@@ -258,8 +261,9 @@ header {
         }
     
         .about_strengths {
-            margin-top: 50px;
+            margin-top: 20px;
             width: 400px;
+            padding-left: 10px;
 
             li {
                 list-style-type: square;
@@ -305,12 +309,12 @@ header {
 
 #services {
   @include flex-center;
-  padding-left: 150px;
   padding-top: 30px;
 
   .services-l {
     width: 60%;
     padding-inline: 20px;
+    margin-left: 8px;
 
     h1 {
       color: #686868;
@@ -416,7 +420,8 @@ header {
 
 #portfolio {
   padding-top: 30px;
-  padding-left: 160px;
+  padding-left: 125px;
+  
   h1 {
     color: #686868;
     font-size: 60pt;
@@ -602,21 +607,25 @@ header {
 
 #testimonial {
   padding-top: 50px;
+  padding-left: 110px;
+  
     .testimonial_header {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
 
         h1 {
             font-size: 75px;
-            margin-bottom: 20px;
+            margin-left: 15px;
             color: #686868;
+            padding-left: 0%;
         }
 
         img {
             width: 120px;
             height: 120px;
             margin-bottom: 20px;
-            margin-inline: 50px;
+            margin-left: -390px;
         }
     }
 
@@ -649,12 +658,13 @@ header {
 }
 
 #contact {
-  padding-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  gap: 20px;
 
   .contact-left {
+    margin-left: 25px;
     h1 {
       color: #686868;
       font-size: 75pt;
@@ -708,21 +718,26 @@ header {
   }
 
   .contact-right{
-    width: 35%;
+    width: 50%;
     margin-top: 55px;
-    padding-top: 5%;
-      
+    padding-top: 5%;      
 
     .form-fields {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      width: 100%;
+      
+      label {
+        margin-left: 80px;
+      }
 
       input, textarea {
         padding: 10px;
         border: 2px solid;
         border-color: #add8e6;
+        width: 70%;
       }
 
       button {
@@ -731,6 +746,7 @@ header {
         background-color: #c06912;
         color: white;
         font-weight: bold;
+        margin-left: 70px;
       }
     }
   }
