@@ -27,8 +27,8 @@ window.addEventListener('scroll', updateActiveLink);
 // Redirect
 function redirect(e) {
     if (e.target.classList.contains('redirect')) {
-        window.location.href = `http://127.0.0.1:5500/show-image.html?imageUrl=${e.target.classList[0]}&pages=${e.target.classList[1]}`;
-        console.log('redirect')
+        //window.location.href = `http://127.0.0.1:5500/show-image.html?imageUrl=${e.target.classList[0]}&pages=${e.target.classList[1]}`;
+        window.location.href = `https://copy-pat.github.io/copywriting-portfolio/show-image.html?imageUrl=${e.target.classList[0]}&pages=${e.target.classList[1]}`;
     }
 }
 
