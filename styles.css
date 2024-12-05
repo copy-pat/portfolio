@@ -397,7 +397,7 @@ header .nav-link.active {
   background-color: #a59d84;
   margin-block: 5px;
   width: 150px;
-  cursor: default;
+  cursor: pointer;
   gap: 10px;
   border: 1px solid black;
   border-radius: 5px;
@@ -405,6 +405,7 @@ header .nav-link.active {
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages {
   margin-top: 11px;
   flex: 1;
+  cursor: pointer;
 }
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container {
   display: flex;
@@ -453,14 +454,15 @@ header .nav-link.active {
 #portfolio .portfolio-container .portfolio-b .portfolio-b-l .machine-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 #portfolio .portfolio-container .portfolio-b .portfolio-b-l .machine-container .machine-desc {
   margin-top: 10px;
+  margin-right: 0px;
   background-color: #89a8b2;
   padding: 5px 10px;
   width: -moz-fit-content;
   width: fit-content;
+  cursor: pointer;
 }
 #portfolio .portfolio-container .portfolio-b .portfolio-b-r {
   width: 60%;
@@ -492,6 +494,8 @@ header .nav-link.active {
   width: fit-content;
   padding: 5px 10px;
   margin-block: 10px;
+  margin-left: 0px;
+  cursor: pointer;
 }
 
 #testimonial {
