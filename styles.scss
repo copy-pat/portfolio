@@ -84,7 +84,7 @@ header {
     }
 
     .intro_link {
-      background-color: $primary-color;
+      background-color: #c06912;
       margin-top: 10px;
       padding: 5px 2px;
       border: 1px solid black;
@@ -92,7 +92,7 @@ header {
       cursor: pointer;
 
       &:hover {
-        background-color: #7b3906;
+        background-color: $primary-color;
         transform: scale(1.05);
         transition: all 0.3s ease;
       }
@@ -110,7 +110,7 @@ header {
   .badge {
     h1 {
       font-size: 40pt;
-      color: #604a7b;
+      color: grey;
     }
   
     .badge_services {
@@ -118,7 +118,7 @@ header {
       text-align: left;
       padding-left: 20px;
       font-weight: bold;
-      color: $highlight-color;
+      color: grey;
   
       li {
         position: relative;
@@ -131,10 +131,10 @@ header {
           top: 50%;
           left: 0;
           transform: translateY(-50%);
-          width: 15px;
-          height: 15px;
-          border: 2px solid $highlight-color;
-          box-shadow: 2px 2px 2px rgba(0, 79, 138, 0.75);
+          width: 10px;
+          height: 10px;
+          border: 2px solid grey;
+          box-shadow: 2px 2px 2px grey;
         }
       }
     }
@@ -176,8 +176,17 @@ header {
 
     .patron-t, .patron-b {
       display: flex;
-      gap: 10px;
-      //margin: 20px;
+      align-items: center;
+    }
+
+    .patron-t {
+      img {
+        flex: 1;
+      }
+    }
+
+    .patron-b {
+      gap: 20px;
     }
 
     .patron-t img{
@@ -281,9 +290,13 @@ header {
             width: 400px;
             padding-left: 10px;
 
+            h3 {
+              margin-left: -10px;
+            }
+
             li {
                 list-style-type: square;
-                /*margin: 10px;*/
+                line-height: 1.2rem;
             }
         }
     }
@@ -340,7 +353,6 @@ header {
     h2 {
       color: #4d4d4d;
       font-size: 23pt;
-      margin-bottom: -5px;
     }
 
     h3 {
@@ -384,7 +396,7 @@ header {
           color: #215968;
           font-weight: bold;
           border-right: solid 1px gray;
-          width: 200px;
+          width: 190px;
           }
         }
 
@@ -402,6 +414,8 @@ header {
   .services-r {
     width: 40%;
     padding-inline: 20px;
+    margin-top: 100px;
+    padding-top: 10px;
 
     .offer {
       margin-top: 20px;
@@ -426,6 +440,11 @@ header {
     .diamond {
       @include flex-center;
       flex-direction: column;
+
+      img {
+        height: 100px;
+      }
+
       p {
         color: rgb(53, 1, 53);
         font-weight: bold;        
@@ -517,7 +536,6 @@ header {
         }
 
         .landing-pages {
-          margin-top: 11px;
           flex: 1;
           cursor: pointer;
 
@@ -532,6 +550,7 @@ header {
               border: 1px solid black;
               border-radius: 5px;
               padding-inline: 10px;
+              margin-left: 0px;
 
               &:hover {
                 transform: scale(1.05);

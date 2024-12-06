@@ -56,7 +56,7 @@ header .nav-link.active {
   font-size: 2em;
 }
 #home .intro .intro_link {
-  background-color: #984807;
+  background-color: #c06912;
   margin-top: 10px;
   padding: 5px 2px;
   border: 1px solid black;
@@ -64,7 +64,7 @@ header .nav-link.active {
   cursor: pointer;
 }
 #home .intro .intro_link:hover {
-  background-color: #7b3906;
+  background-color: #984807;
   transform: scale(1.05);
   transition: all 0.3s ease;
 }
@@ -76,14 +76,14 @@ header .nav-link.active {
 }
 #home .badge h1 {
   font-size: 40pt;
-  color: #604a7b;
+  color: grey;
 }
 #home .badge .badge_services {
   list-style: none;
   text-align: left;
   padding-left: 20px;
   font-weight: bold;
-  color: #004f8a;
+  color: grey;
 }
 #home .badge .badge_services li {
   position: relative;
@@ -96,10 +96,10 @@ header .nav-link.active {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  width: 15px;
-  height: 15px;
-  border: 2px solid #004f8a;
-  box-shadow: 2px 2px 2px rgba(0, 79, 138, 0.75);
+  width: 10px;
+  height: 10px;
+  border: 2px solid grey;
+  box-shadow: 2px 2px 2px grey;
 }
 #home .links {
   display: flex;
@@ -134,7 +134,13 @@ header .nav-link.active {
 }
 #home .patron .patron-t, #home .patron .patron-b {
   display: flex;
-  gap: 10px;
+  align-items: center;
+}
+#home .patron .patron-t img {
+  flex: 1;
+}
+#home .patron .patron-b {
+  gap: 20px;
 }
 #home .patron .patron-t img {
   height: 60px;
@@ -225,9 +231,12 @@ header .nav-link.active {
   width: 400px;
   padding-left: 10px;
 }
+#about .about .about_r .about_strengths h3 {
+  margin-left: -10px;
+}
 #about .about .about_r .about_strengths li {
   list-style-type: square;
-  /*margin: 10px;*/
+  line-height: 1.2rem;
 }
 #about .about_footer {
   /* about_footer */
@@ -274,7 +283,6 @@ header .nav-link.active {
 #services .services-l h2 {
   color: #4d4d4d;
   font-size: 23pt;
-  margin-bottom: -5px;
 }
 #services .services-l h3 {
   color: #4d4d4d;
@@ -310,7 +318,7 @@ header .nav-link.active {
   color: #215968;
   font-weight: bold;
   border-right: solid 1px gray;
-  width: 200px;
+  width: 190px;
 }
 #services .services-l .styled-table tbody tr:nth-child(odd) {
   background-color: #dedede; /* Light gray */
@@ -321,6 +329,8 @@ header .nav-link.active {
 #services .services-r {
   width: 40%;
   padding-inline: 20px;
+  margin-top: 100px;
+  padding-top: 10px;
 }
 #services .services-r .offer {
   margin-top: 20px;
@@ -343,6 +353,9 @@ header .nav-link.active {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+#services .services-r .diamond img {
+  height: 100px;
 }
 #services .services-r .diamond p {
   color: rgb(53, 1, 53);
@@ -423,7 +436,6 @@ header .nav-link.active {
   transition: all 0.3s ease;
 }
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages {
-  margin-top: 11px;
   flex: 1;
   cursor: pointer;
 }
@@ -438,6 +450,7 @@ header .nav-link.active {
   border: 1px solid black;
   border-radius: 5px;
   padding-inline: 10px;
+  margin-left: 0px;
 }
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container img:hover {
   transform: scale(1.05);
