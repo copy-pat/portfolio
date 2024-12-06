@@ -59,6 +59,14 @@ header .nav-link.active {
   background-color: #984807;
   margin-top: 10px;
   padding: 5px 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#home .intro .intro_link:hover {
+  background-color: #7b3906;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 #home .intro .intro_link a {
   color: white;
@@ -97,11 +105,18 @@ header .nav-link.active {
   display: flex;
   align-items: center;
   background: grey;
-  height: 30px;
+  height: 35px;
   width: 250px;
   margin: 10px;
   padding-inline: 10px;
   text-align: left;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#home .links:hover {
+  background-color: #666666;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 #home .links a {
   color: whitesmoke;
@@ -466,6 +481,11 @@ header .nav-link.active {
   border: 1px solid black;
   border-radius: 5px;
 }
+#portfolio .portfolio-container .portfolio-b .portfolio-b-l .machine-container .machine-desc:hover {
+  background-color: #6d8f99;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
 #portfolio .portfolio-container .portfolio-b .portfolio-b-r {
   width: 60%;
 }
@@ -498,6 +518,11 @@ header .nav-link.active {
   margin-block: 10px;
   margin-left: 0px;
   cursor: pointer;
+}
+#portfolio .portfolio-container .portfolio-b .portfolio-b-r .email-sample:hover, #portfolio .portfolio-container .portfolio-b .portfolio-b-r .email-landing-page:hover {
+  background-color: #8b6d54;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 #testimonial {
@@ -629,9 +654,20 @@ header .nav-link.active {
 
 /* This is the button at the bottom of every section */
 .contact-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #c06912;
-  width: 100px;
+  width: 150px;
+  height: 30px;
   margin: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.contact-me:hover {
+  background-color: #984807;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 .contact-me a {
   color: black;

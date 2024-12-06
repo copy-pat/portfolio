@@ -84,10 +84,18 @@ header {
     }
 
     .intro_link {
-      //@include flex-center;
       background-color: $primary-color;
       margin-top: 10px;
       padding: 5px 2px;
+      border: 1px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #7b3906;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+      }
 
       a {
         color: white;
@@ -136,11 +144,19 @@ header {
     display: flex;
     align-items: center;
     background: grey;
-    height: 30px;
+    height: 35px;
     width: 250px;
     margin: 10px;
     padding-inline: 10px;
     text-align: left;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #666666;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
 
     a {
         color: whitesmoke;
@@ -567,6 +583,12 @@ header {
             cursor: pointer;
             border: 1px solid black;
             border-radius: 5px;
+
+            &:hover {
+              background-color: #6d8f99;
+              transform: scale(1.05);
+              transition: all 0.3s ease;
+            }
           }
         }
       }
@@ -605,6 +627,12 @@ header {
           margin-block: 10px;
           margin-left: 0px;
           cursor: pointer;
+
+          &:hover {
+            background-color: #8b6d54;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+          }
         }
       }
     }
@@ -761,9 +789,21 @@ header {
 
 /* This is the button at the bottom of every section */
 .contact-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #c06912;
-  width: 100px;
+  width: 150px;
+  height: 30px;
   margin: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #984807;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
 
   a {
     color: black;
