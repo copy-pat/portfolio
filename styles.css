@@ -348,19 +348,6 @@ header .nav-link.active {
 #services .services-r .other-services h3 {
   color: #212121;
 }
-#services .services-r .diamond {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#services .services-r .diamond img {
-  height: 100px;
-}
-#services .services-r .diamond p {
-  color: rgb(53, 1, 53);
-  font-weight: bold;
-}
 
 #portfolio {
   padding-top: 30px;

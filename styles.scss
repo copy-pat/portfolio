@@ -436,20 +436,6 @@ header {
       margin-block: 20px;
       color: #0d0d0d;
     }
-
-    .diamond {
-      @include flex-center;
-      flex-direction: column;
-
-      img {
-        height: 100px;
-      }
-
-      p {
-        color: rgb(53, 1, 53);
-        font-weight: bold;        
-      }
-    }
   }
 }
 
