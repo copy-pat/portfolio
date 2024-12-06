@@ -507,6 +507,12 @@ header {
             gap: 10px;
             border: 1px solid black;
             border-radius: 5px;
+
+            &:hover {
+              background-color: #7f7a63;
+              transform: scale(1.05);
+              transition: all 0.3s ease;
+            }
           }
         }
 
@@ -527,8 +533,10 @@ header {
               border-radius: 5px;
               padding-inline: 10px;
 
-              &::hover {
-                background-color: rgba(0, 0, 0, 0.5);
+              &:hover {
+                transform: scale(1.05);
+                transition: all 0.3s ease;
+                background-color: white;
               }
 
             }

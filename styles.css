@@ -417,6 +417,11 @@ header .nav-link.active {
   border: 1px solid black;
   border-radius: 5px;
 }
+#portfolio .portfolio-container .portfolio-t .portfolio-t-r .webpages-container .webpages:hover {
+  background-color: #7f7a63;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
 #portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages {
   margin-top: 11px;
   flex: 1;
@@ -434,8 +439,10 @@ header .nav-link.active {
   border-radius: 5px;
   padding-inline: 10px;
 }
-#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container img::hover {
-  background-color: rgba(0, 0, 0, 0.5);
+#portfolio .portfolio-container .portfolio-t .portfolio-t-r .landing-pages .logo-container img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  background-color: white;
 }
 #portfolio .portfolio-container .portfolio-b {
   display: flex;
