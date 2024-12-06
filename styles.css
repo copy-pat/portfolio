@@ -463,6 +463,8 @@ header .nav-link.active {
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 #portfolio .portfolio-container .portfolio-b .portfolio-b-r {
   width: 60%;
@@ -699,4 +701,10 @@ header .nav-link.active {
 /* Two images side by side */
 .overlay-container.multiple {
   flex-direction: row;
+}
+
+.email-style {
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

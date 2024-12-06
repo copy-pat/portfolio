@@ -565,6 +565,8 @@ header {
             padding: 5px 10px;
             width: fit-content;
             cursor: pointer;
+            border: 1px solid black;
+            border-radius: 5px;
           }
         }
       }
@@ -838,4 +840,10 @@ header {
 /* Two images side by side */
 .overlay-container.multiple {
   flex-direction: row;
+}
+
+.email-style {
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }
