@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reset Password</title>
+        <link rel="icon" type="image/x-icon" href="./assets/cp-favicon.png">
+    </head>
+    <body>
+        <h1>Reset Password</h1>
+        <form action="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit">Reset Password</button>
+        </form>
+        <script>
+            document.getElementById("reset_link_btn").addEventListener("click", function(){
+                const theEmail=document.getElementById("email_to_reset").value;
+                console.log(theEmail);
+                    // Simple validation for email format
+                    const emailRegex = /^\S+@\S+\.\S+$/;
+                    if (!emailRegex.test(theEmail)) {
+                        alert('Please enter a valid email');
+                        return;
+                    }
+    
+                    const { data, error } = _supabase.auth.resetPasswordForEmail(theEmail, {
+                        redirectTo: 'https://donatenowapp.com/reset-password',
+                    });
+                    console.log(data);
+    
+                    if(error){
+                        alert('Error resetting password: ' + error.message);
+                    } else {
+                        alert(`Recovery instructions sent to ${theEmail}. Please check your spam folder.`)
+                    }
+                event.preventDefault();
+            });
+        </script>
+    </body>
+</html>
