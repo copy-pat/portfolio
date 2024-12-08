@@ -5,35 +5,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Reset Password</title>
         <link rel="icon" type="image/x-icon" href="./assets/cp-favicon.png">
+        <link rel="stylesheet" href="./auth.css">
     </head>
     <body>
-        <h1>Reset Password</h1>
-        <form action="post">
-            <input type="email" name="email" placeholder="Email" required>
-            <button type="submit">Reset Password</button>
+        <form id="reset-password" class="form" style="height: 200px; display: flex; flex-direction: column; justify-content: center;">
+            <h2>Reset Password</h2>
+            <input type="email" placeholder="Email" id="email" required>
+            <button type="submit" class="submit">Reset Password</button>
         </form>
-        <script>
-            document.getElementById("reset_link_btn").addEventListener("click", function(){
-                const theEmail=document.getElementById("email_to_reset").value;
-                console.log(theEmail);
-                    // Simple validation for email format
+
+        <script type="module">
+            const supabaseUrl = 'https://lgktlstnfwmpeiyqfjyh.supabase.co';
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxna3Rsc3RuZndtcGVpeXFmanloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTE2MDAsImV4cCI6MjA0NzkyNzYwMH0.TV9xPa2uRwLm7G-xTPjrxdaDd7EV44BIIJQ6kUOhDbg';
+            import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+            const supabase = createClient(supabaseUrl, supabaseKey);
+
+            document.getElementById("reset-password").addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                try {
+                    const email = document.getElementById("email").value;
+
+                    // Email format validation
                     const emailRegex = /^\S+@\S+\.\S+$/;
-                    if (!emailRegex.test(theEmail)) {
+                    if (!emailRegex.test(email)) {
                         alert('Please enter a valid email');
                         return;
                     }
     
-                    const { data, error } = _supabase.auth.resetPasswordForEmail(theEmail, {
+                    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
                         redirectTo: 'https://donatenowapp.com/reset-password',
                     });
-                    console.log(data);
-    
-                    if(error){
-                        alert('Error resetting password: ' + error.message);
-                    } else {
-                        alert(`Recovery instructions sent to ${theEmail}. Please check your spam folder.`)
-                    }
-                event.preventDefault();
+                } catch {
+                    alert("Error resetting password: " + error.message);
+                    console.error(error);
+                }
+                
             });
         </script>
     </body>

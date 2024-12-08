@@ -5,76 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
     <link rel="icon" type="image/x-icon" href="./assets/cp-favicon.png">
-    <style>
-        /* Reset some basic styles */
-        body {
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        #login-form {
-            background-color: whitesmoke;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        #login-form h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        #login-form input {
-            width: 93%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        #login-form input:focus {
-            border-color: #c06912; /* Highlight on focus */
-        }
-
-        .submit {
-            width: 100%;
-            padding: 12px;
-            background-color: #c06912;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        #login-form button:hover {
-            background-color:  #984807;
-            transform: scale(1.02);
-        }
-
-        #login-form button:active {
-            background-color: #833b06; /* Even darker on click */
-        }
-    </style>  
+    <link rel="stylesheet" href="./auth.css">    
 </head>
 <body>
-    <form id="login-form">
+    <form id="login" class="form">
         <h2>Copypat Admin Login</h2>
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
@@ -94,7 +28,7 @@
         const supabase = createClient(supabaseUrl, supabaseKey);
 
         // Handle form submission
-        document.getElementById('login-form').addEventListener('submit', async (e) => {
+        document.getElementById('login').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const email = document.getElementById('email').value;
@@ -107,7 +41,6 @@
                 console.error(error);
                 } else {
                 // Redirect to admin page on successful login
-                console.log('Login successful!');
                 window.location.href = 'https://copy-pat.github.io/copywriting-portfolio/admin.html';
             }
         });

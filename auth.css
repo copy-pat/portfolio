@@ -1,0 +1,65 @@
+/* Reset some basic styles */
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background-color: whitesmoke;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form input {
+    width: 93%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form input:focus {
+    border-color: #c06912; /* Highlight on focus */
+}
+
+.submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #c06912;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form button:hover {
+    background-color:  #984807;
+    transform: scale(1.02);
+}
+
+.form button:active {
+    background-color: #833b06; /* Even darker on click */
+}
