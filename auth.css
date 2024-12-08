@@ -63,3 +63,24 @@ body {
 .form button:active {
     background-color: #833b06; /* Even darker on click */
 }
+
+.submitBtn {
+    pointer-events: none;
+    background-color: #ccc;
+}
+
+.submitBtn.enabled {
+    pointer-events: auto;
+    background-color: #c06912;
+}
+
+.error {
+    color: red;
+    font-size: 0.875rem;
+    margin-block: 10px;
+}
+.success {
+    color: green;
+    font-size: 0.875rem;
+    margin-block: 10px;
+}
