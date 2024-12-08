@@ -21,13 +21,11 @@
         const imageUrl = urlParams.get('imageUrl');
         const pages = urlParams.get('pages');
 
-        console.log(imageUrl);
-
         for (let i = 0; i < pages; i++) {
             const img = document.createElement('img');
             img.src = `./assets/${imageUrl}-${i}.jpg`;
-            
-            if (imageUrl === 'image' || imageUrl === 'email-landing-page') {
+
+            if (imageUrl === 'email-sample' || imageUrl === 'email-landing-page') {
                 img.style.width = "50%";
             } else {
                 img.style.width = "75%";
