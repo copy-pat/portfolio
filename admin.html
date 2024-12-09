@@ -84,11 +84,11 @@
                 
                 document.getElementById('logout').addEventListener('click', async () => {
                     await supabase.auth.signOut();
-                    window.location.href = 'https://copy-pat.github.io/copywriting-portfolio/login';
+                    window.location.href = 'https://copy-pat.github.io/portfolio/login';
                 });
             } catch (err) {
                 console.error('Error during authentication check:', err);
-                window.location.href = 'https://copy-pat.github.io/copywriting-portfolio/login';
+                window.location.href = 'https://copy-pat.github.io/portfolio/login';
             }
         });
     </script>
