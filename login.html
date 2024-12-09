@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="./auth.css">    
 </head>
 <body>
-    <form id="login" class="form">
+    <form id="login" class="form" style="height: 280px;">
         <h2>Copypat Admin Login</h2>
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
+        <div style="display: inline-flex; width: 100%; align-items: center;">
+            <input type="checkbox" class="toggleInputType" style="width: 10%;">
+            <b>Show Password</b>
+        </div>
         <button type="submit" class="submit">Login</button>
     </form>
 
@@ -26,6 +30,16 @@
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
         const supabase = createClient(supabaseUrl, supabaseKey);
+
+        // Toggle password visibility
+        document.getElementsByClassName('toggleInputType')[0].addEventListener('click', () => {
+            let inputPassword = document.getElementById('password');
+            if (inputPassword.type === 'password') {
+                inputPassword.type = 'text';
+            } else {
+                inputPassword.type = 'password';
+            }
+        })
 
         // Handle form submission
         document.getElementById('login').addEventListener('submit', async (e) => {
