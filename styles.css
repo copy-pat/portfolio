@@ -45,7 +45,7 @@ header .nav-link.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-top: 105px;
   padding-top: 30px;
 }
@@ -53,7 +53,7 @@ header .nav-link.active {
   margin-left: 27px;
 }
 #home .intro h1 {
-  font-size: 2em;
+  font-size: 1.6em;
 }
 #home .intro .intro_link {
   background-color: #c06912;
@@ -74,23 +74,30 @@ header .nav-link.active {
   padding: 10px 20px;
   border-radius: 5px;
 }
-#home .badge h1 {
-  font-size: 40pt;
+#home .badge .badge-services-container {
+  background-color: #f5f5f5;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px 20px;
+  margin-top: 13px;
+}
+#home .badge .badge-services-container h1 {
+  font-size: 30pt;
   color: grey;
 }
-#home .badge .badge_services {
+#home .badge .badge-services-container .badge-services {
   list-style: none;
   text-align: left;
   padding-left: 20px;
   font-weight: bold;
   color: grey;
 }
-#home .badge .badge_services li {
+#home .badge .badge-services-container .badge-services li {
   position: relative;
   padding-inline: 30px;
   font-size: 18.1pt;
 }
-#home .badge .badge_services li::before {
+#home .badge .badge-services-container .badge-services li::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -101,55 +108,49 @@ header .nav-link.active {
   border: 2px solid grey;
   box-shadow: 2px 2px 2px grey;
 }
-#home .links {
+#home .badge .link {
   display: flex;
   align-items: center;
   background: grey;
   height: 35px;
   width: 250px;
-  margin: 10px;
+  margin-block: 10px;
+  margin-left: 0px;
   padding-inline: 10px;
   text-align: left;
   border: 1px solid black;
   border-radius: 5px;
 }
-#home .links:hover {
+#home .badge .link:hover {
   background-color: #666666;
   transform: scale(1.05);
   transition: all 0.3s ease;
 }
-#home .links a {
+#home .badge .link a {
   color: whitesmoke;
   text-decoration: none;
   margin-left: 0;
   text-align: left;
   font-size: 12pt;
 }
-#home .patron {
+#home .badge .logos {
   display: flex;
   flex-direction: column;
   margin: 20px;
   justify-content: space-around;
   gap: 10px;
 }
-#home .patron .patron-t, #home .patron .patron-b {
+#home .badge .logos .logos-t, #home .badge .logos .logos-b {
   display: flex;
   align-items: center;
+  width: 100%;
 }
-#home .patron .patron-t img {
+#home .badge .logos .logos-t img {
   flex: 1;
 }
-#home .patron .patron-b {
-  gap: 20px;
-}
-#home .patron .patron-t img {
+#home .badge .logos .logos-t img {
   height: 60px;
   width: auto;
-}
-#home .patron .patron-b img {
-  height: 70px;
-  width: auto;
-  gap: 5px;
 }
 
 #about {
@@ -175,7 +176,7 @@ header .nav-link.active {
 }
 #about .about .about_l h1 {
   color: #686868;
-  font-size: 60pt;
+  font-size: 50pt;
   padding-block: 0px;
 }
 #about .about .about_l .about_skills {
@@ -224,7 +225,6 @@ header .nav-link.active {
 }
 #about .about .about_r .about_info p {
   margin-block: 5px;
-  font-weight: bold;
 }
 #about .about .about_r .about_strengths {
   margin-top: 20px;
@@ -278,7 +278,7 @@ header .nav-link.active {
 }
 #services .services-l h1 {
   color: #686868;
-  font-size: 60pt;
+  font-size: 50pt;
 }
 #services .services-l h2 {
   color: #4d4d4d;
@@ -355,7 +355,7 @@ header .nav-link.active {
 }
 #portfolio h1 {
   color: #686868;
-  font-size: 60pt;
+  font-size: 50pt;
 }
 #portfolio h2 {
   color: #0d0d0d;
@@ -542,7 +542,7 @@ header .nav-link.active {
   justify-content: flex-start;
 }
 #testimonial .testimonial_header h1 {
-  font-size: 75px;
+  font-size: 50pt;
   margin-left: 15px;
   color: #686868;
   padding-left: 0%;
@@ -574,7 +574,6 @@ header .nav-link.active {
   text-align: center;
   -webkit-clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
           clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
-  font-weight: bold;
 }
 
 #contact {
@@ -588,7 +587,7 @@ header .nav-link.active {
 }
 #contact .contact-left h1 {
   color: #686868;
-  font-size: 75pt;
+  font-size: 50pt;
   height: 85pt;
   margin-bottom: 40px;
 }

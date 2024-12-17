@@ -72,15 +72,14 @@ header {
 // Home section
 #home {
   @include flex-center;
-  //justify-content: space-around;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-top: $header-height;
   padding-top: 30px;
 
   .intro {
     margin-left: 27px;
     h1 {
-      font-size: 2em;
+      font-size: 1.6em;
     }
 
     .intro_link {
@@ -108,12 +107,20 @@ header {
 
   // Badge
   .badge {
-    h1 {
-      font-size: 40pt;
-      color: grey;
-    }
+    .badge-services-container {
+      background-color: #f5f5f5;
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 5px 20px;
+      margin-top: 13px;
+    
+
+      h1 {
+        font-size: 30pt;
+        color: grey;
+      }
   
-    .badge_services {
+      .badge-services {
       list-style: none;
       text-align: left;
       padding-left: 20px;
@@ -137,16 +144,18 @@ header {
           box-shadow: 2px 2px 2px grey;
         }
       }
+      }
     }
-  }
+  
 
-  .links {
+    .link {
     display: flex;
     align-items: center;
     background: grey;
     height: 35px;
     width: 250px;
-    margin: 10px;
+    margin-block: 10px;
+    margin-left: 0px;
     padding-inline: 10px;
     text-align: left;
     border: 1px solid black;
@@ -165,39 +174,31 @@ header {
         text-align: left;
         font-size: 12pt;
     }
-  }
+    }
 
-  .patron {
+    .logos {
     display: flex;
     flex-direction: column;
     margin: 20px;
     justify-content: space-around;
     gap: 10px;
 
-    .patron-t, .patron-b {
+    .logos-t, .logos-b {
       display: flex;
       align-items: center;
+      width: 100%;
     }
 
-    .patron-t {
+    .logos-t {
       img {
         flex: 1;
       }
     }
 
-    .patron-b {
-      gap: 20px;
-    }
-
-    .patron-t img{
+    .logos-t img{
       height: 60px;
       width: auto;
     }
-
-    .patron-b img{
-      height: 70px;
-      width: auto;
-      gap: 5px;
     }
   }
 }
@@ -223,7 +224,7 @@ header {
     .about_l {
         h1 {
             color: #686868;
-            font-size: 60pt;
+            font-size: 50pt;
             padding-block: 0px;
         }
     
@@ -281,7 +282,6 @@ header {
 
             p {
               margin-block: 5px;
-              font-weight: bold;
             }
         }
     
@@ -347,7 +347,7 @@ header {
 
     h1 {
       color: #686868;
-      font-size: 60pt;
+      font-size: 50pt;
     }
 
     h2 {
@@ -445,7 +445,7 @@ header {
   
   h1 {
     color: #686868;
-    font-size: 60pt;
+    font-size: 50pt;
   }
 
   h2 {
@@ -662,7 +662,7 @@ header {
         justify-content: flex-start;
 
         h1 {
-            font-size: 75px;
+            font-size: 50pt;
             margin-left: 15px;
             color: #686868;
             padding-left: 0%;
@@ -698,7 +698,6 @@ header {
             padding: 30px;
             text-align: center;
             clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
-            font-weight: bold;
         }
       }
     }
@@ -714,7 +713,7 @@ header {
     margin-left: 25px;
     h1 {
       color: #686868;
-      font-size: 75pt;
+      font-size: 50pt;
       height: 85pt;
       margin-bottom: 40px;
     }
