@@ -107,11 +107,12 @@ header {
 
   // Badge
   .badge {
+    width: 60%;
     .badge-services-container {
       background-color: #f5f5f5;
       border: 1px solid black;
       border-radius: 3px;
-      padding: 5px 20px;
+      padding: 20px 50px;
       margin-top: 13px;
     
 
@@ -130,7 +131,7 @@ header {
       li {
         position: relative;
         padding-inline: 30px;
-        font-size: 18.1pt;
+        font-size: 1.1rem;
   
         &::before {
           content: '';
@@ -167,38 +168,32 @@ header {
       transition: all 0.3s ease;
     }
 
-    a {
+      a {
         color: whitesmoke;
         text-decoration: none;
         margin-left: 0;
         text-align: left;
         font-size: 12pt;
-    }
-    }
-
-    .logos {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    justify-content: space-around;
-    gap: 10px;
-
-    .logos-t, .logos-b {
-      display: flex;
-      align-items: center;
-      width: 100%;
-    }
-
-    .logos-t {
-      img {
-        flex: 1;
       }
     }
 
-    .logos-t img{
-      height: 60px;
-      width: auto;
-    }
+    .logos {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+      justify-content: space-around;
+      //gap: 10px;
+  
+      .logos-t, .logos-b {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+
+      .logos-t img{
+        height: 80px;
+        width: auto;
+      }
     }
   }
 }
@@ -338,10 +333,10 @@ header {
 
 #services {
   @include flex-center;
+  flex-direction: column;
   padding-top: 30px;
 
-  .services-l {
-    width: 60%;
+  .services-t {
     padding-inline: 20px;
     margin-left: 8px;
 
@@ -411,30 +406,37 @@ header {
     }
   }
 
-  .services-r {
-    width: 40%;
+  .services-b {
+    display: flex;
+    margin-left: 8px;
     padding-inline: 20px;
-    margin-top: 100px;
     padding-top: 10px;
+    gap: 30px;
 
     .offer {
+      background-color: #eeece1;
       margin-top: 20px;
+      padding: 20px;
+      color: #0d0d0d;
+      height: fit-content;
+
       h3 {
         color: #212121;
       }
-
-      color: #0d0d0d;
-      padding-inline: 20px;
     }
 
-    .other-services {
+    .other-services-container {
+      .other-services {
+      background-color: #ddd9c3;
+      height: fit-content;
+      padding: 20px;
+      margin-block: 20px;
+      color: #0d0d0d;
+
       h3 {
         color: #212121;
       }
-
-      padding-inline: 20px;
-      margin-block: 20px;
-      color: #0d0d0d;
+      }
     }
   }
 }
@@ -669,10 +671,10 @@ header {
         }
 
         img {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             margin-bottom: 20px;
-            margin-left: -390px;
+            margin-left: -410px;
         }
     }
 
