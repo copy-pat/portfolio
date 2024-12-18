@@ -419,6 +419,7 @@ header {
       padding: 20px;
       color: #0d0d0d;
       height: fit-content;
+      font-size: .9rem;
 
       h3 {
         color: #212121;
@@ -427,15 +428,16 @@ header {
 
     .other-services-container {
       .other-services {
-      background-color: #ddd9c3;
-      height: fit-content;
-      padding: 20px;
-      margin-block: 20px;
-      color: #0d0d0d;
+        background-color: #ddd9c3;
+        height: fit-content;
+        padding: 20px;
+        margin-block: 20px;
+        color: #0d0d0d;
+        font-size: .9rem;
 
-      h3 {
-        color: #212121;
-      }
+        h3 {
+          color: #212121;
+        }
       }
     }
   }

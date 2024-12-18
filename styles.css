@@ -339,6 +339,7 @@ header .nav-link.active {
   color: #0d0d0d;
   height: -moz-fit-content;
   height: fit-content;
+  font-size: 0.9rem;
 }
 #services .services-b .offer h3 {
   color: #212121;
@@ -350,6 +351,7 @@ header .nav-link.active {
   padding: 20px;
   margin-block: 20px;
   color: #0d0d0d;
+  font-size: 0.9rem;
 }
 #services .services-b .other-services-container .other-services h3 {
   color: #212121;
