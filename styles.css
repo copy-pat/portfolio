@@ -588,6 +588,7 @@ header .nav-link.active {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding-top: 30px;
   gap: 20px;
 }
 #contact .contact-left {
@@ -596,8 +597,8 @@ header .nav-link.active {
 #contact .contact-left h1 {
   color: #686868;
   font-size: 50pt;
-  height: 85pt;
-  margin-bottom: 40px;
+  height: 50pt;
+  margin-bottom: 20px;
 }
 #contact .contact-left .image-container {
   position: relative;
