@@ -42,114 +42,52 @@ header .nav-link.active {
 }
 
 #home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-items: flex-start;
-  margin-top: 105px;
-  padding-top: 30px;
+  height: auto;
+  padding-top: 155px;
 }
 #home .intro {
-  margin-left: 27px;
-}
-#home .intro h1 {
-  font-size: 1.6em;
-}
-#home .intro .intro_link {
-  background-color: #c06912;
-  margin-top: 10px;
-  padding: 5px 2px;
-  border: 1px solid black;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#home .intro .intro_link:hover {
-  background-color: #984807;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-#home .intro .intro_link a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-#home .badge {
-  width: 60%;
-}
-#home .badge .badge-services-container {
-  background-color: #f5f5f5;
-  border: 1px solid black;
-  border-radius: 3px;
-  padding: 20px 50px;
-  margin-top: 13px;
-}
-#home .badge .badge-services-container h1 {
-  font-size: 30pt;
-  color: grey;
-}
-#home .badge .badge-services-container .badge-services {
-  list-style: none;
-  text-align: left;
-  padding-left: 20px;
-  font-weight: bold;
-  color: grey;
-}
-#home .badge .badge-services-container .badge-services li {
+  display: flex;
   position: relative;
-  padding-inline: 30px;
-  font-size: 1.1rem;
 }
-#home .badge .badge-services-container .badge-services li::before {
-  content: "";
+#home .intro img {
+  z-index: 2;
   position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  border: 2px solid grey;
-  box-shadow: 2px 2px 2px grey;
+  left: 2.7%;
 }
-#home .badge .link {
+#home .intro .intro-text {
+  width: 65%;
+  position: absolute;
+  z-index: 1;
+  left: 22%;
+  margin-top: 50px;
+}
+#home .intro .intro-text h1 {
+  margin-left: 150px;
+}
+#home .intro .intro-text .intro-skills {
+  color: white;
+  background-color: gray;
+  text-align: center;
+  padding-block: 70px;
+  margin-top: 20px;
+}
+#home .intro .intro-text .intro-skills h2 {
+  font-size: 25pt;
+  margin-bottom: 20px;
+}
+#home .intro .intro-text .intro-skills ul {
+  list-style: none;
+  font-size: 18pt;
+  line-height: 1.5rem;
+}
+#home .logos {
+  margin-top: 450px;
   display: flex;
-  align-items: center;
-  background: grey;
-  height: 35px;
-  width: 250px;
-  margin-block: 10px;
-  margin-left: 0px;
-  padding-inline: 10px;
-  text-align: left;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-#home .badge .link:hover {
-  background-color: #666666;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-#home .badge .link a {
-  color: whitesmoke;
-  text-decoration: none;
-  margin-left: 0;
-  text-align: left;
-  font-size: 12pt;
-}
-#home .badge .logos {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
   justify-content: space-around;
-}
-#home .badge .logos .logos-t, #home .badge .logos .logos-b {
-  display: flex;
   align-items: center;
-  width: 100%;
 }
-#home .badge .logos .logos-t img {
+#home .logos img {
   height: 80px;
-  width: auto;
 }
 
 #about {
@@ -187,7 +125,6 @@ header .nav-link.active {
 #about .about .about_l .about_skills ul {
   list-style: none;
   padding-left: 20px;
-  font-weight: bold;
   color: #004f8a;
 }
 #about .about .about_l .about_skills ul li {
@@ -705,55 +642,6 @@ header .nav-link.active {
     flex-direction: column;
   }
 }
-.blur {
-  filter: blur(5px); /* Adjust the intensity of the blur */
-  pointer-events: none; /* Prevent interaction with blurred elements */
-}
-
-.blur::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent dark overlay */
-  z-index: 1; /* Ensure it covers the section */
-}
-
-/* Base style for the overlay container */
-.overlay-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* Space between images when there are two */
-  z-index: 1000;
-}
-
-/* Style for the images */
-.overlay-container img {
-  max-height: 125vh;
-  -o-object-fit: contain;
-     object-fit: contain;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-/* Single image style */
-.overlay-container.single img {
-  width: auto;
-  height: auto;
-}
-
-/* Two images side by side */
-.overlay-container.multiple {
-  flex-direction: row;
-}
-
 .email-style {
   border: 1px solid black;
   border-radius: 5px;
